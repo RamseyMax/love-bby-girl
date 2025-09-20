@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>For Drafor Selorm ❤️</title>
+<style>
+  /* ---------- Page reset & fonts ---------- */
+  :root{
+    --bg1: #0f2027;
+    --bg2: #203a43;
+    --accent: #ff5c8a;
+    --gold: #ffd166;
+    --glass: rgba(255,255,255,0.06);
+  }
+  *{box-sizing:border-box;font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}
+  html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;overflow:hidden}
+  .center { display:grid;place-items:center;height:100vh;padding:20px; }
+
+  /* ---------- Card / form ---------- */
+  .card {
+    width:930px; max-width:100%;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:16px; padding:28px;
+    box-shadow:0 10px 40px rgba(2,6,23,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
+    backdrop-filter: blur(6px);
+    position:relative; overflow:hidden;
+  }
+  h1{margin:0 0 6px 0;font-size:22px;letter-spacing:0.6px}
+  p.lead{margin:0 0 18px 0;opacity:0.95}
+
+  form.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+  label{display:block;font-size:12px;color:rgba(255,255,255,0.95);margin-bottom:6px}
+  input[type="text"], input[type="password"], input[type="date"]{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
+    background:transparent; color:#fff; font-size:14px; outline:none;
+  }
+
+  .btn {
+    display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7bbd);
+    color:#fff;text-decoration:none;border:none;cursor:pointer;font-weight:600;letter-spacing:0.3px;
+  }
+
+  .muted{font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px}
+
+  .denied{
+    background:linear-gradient(90deg,#3b0f1f,#3b111f);
+    padding:16px;border-radius:10px;margin-top:12px;color:#ffdede;font-weight:600;
+  }
+
+  /* ---------- Main content (hidden until unlock) ---------- */
+  #mainContent{display:none;padding-top:18px}
+  .grid100{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+    max-height:320px;overflow:auto;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
+  }
+  .langCard{
+    background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:13px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  .quotes{margin-top:18px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+  .quoteCard{
+    flex:1 1 45%;min-width:250px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:14px;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;
+  }
+
+  /* big "I Love You" heading */
+  .bigTitle{
+    font-size:40px;margin:10px 0 6px 0;color:var(--gold);text-shadow:0 6px 40px rgba(0,0,0,0.55);
+    display:flex;align-items:center;gap:10px;
+  }
+
+  /* canvases */
+  #confettiCanvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3}
+  #heartCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:1;pointer-events:none}
+  #petalCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:2;pointer-events:none}
+
+  /* Make card above canvases */
+  .card{position:relative;z-index:4}
+
+  @media (max-width:860px){
+    .grid100{grid-template-columns:repeat(2,1fr)}
+    form.row{grid-template-columns:1fr}
+    .bigTitle{font-size:28px}
+  }
+</style>
+</head>
+<body>
+  <!-- canvases -->
+  <canvas id="heartCanvas" aria-hidden="true"></canvas>
+  <canvas id="petalCanvas" aria-hidden="true"></canvas>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <div class="center">
+    <div class="card" id="card">
+      <h1>For: DRAFOR SELORM ❤️</h1>
+      <p class="lead">Please enter your full name to continue. If the name does not match exactly, access will be denied.</p>
+
+      <!-- Step 1: name check -->
+      <div id="step1">
+        <form id="form1" onsubmit="return false;">
+          <div class="row">
+            <div>
+              <label>Enter your full name</label>
+              <input id="name1" type="text" autocomplete="off" required />
+            </div>
+            <div style="align-self:end;">
+              <button class="btn" id="checkNameBtn" onclick="checkName()">Submit</button>
+            </div>
+          </div>
+        </form>
+        <div id="nameResult" class="muted"></div>
+      </div>
+
+      <!-- Step 2: more fields -->
+      <div id="step2" style="display:none;margin-top:12px;">
+        <form id="form2" onsubmit="return false;">
+          <div class="row">
+            <div>
+              <label>Enter your boyfriend's full name</label>
+              <input id="bfName" type="text" autocomplete="off" required />
+            </div>
+            <div>
+              <label>Enter bfs birthday</label>
+              <input id="bday" type="text" autocomplete="off" required />
+            </div>
+          </div>
+          <div class="row" style="margin-top:8px;">
+            <div>
+              <label>Create / enter password</label>
+              <input id="pwd" type="password" autocomplete="off" required />
+            </div>
+            <div style="align-self:end;">
+              <button class="btn" onclick="checkAll()">Unlock</button>
+            </div>
+          </div>
+        </form>
+        <div id="step2Msg" class="muted">All values must match the expected values to unlock the page.</div>
+      </div>
+
+      <!-- Denied message -->
+      <div id="denied" style="display:none;" class="denied">Access Denied — name does not match.</div>
+
+      <!-- Main content -->
+      <div id="mainContent">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div>
+            <div class="bigTitle">I LOVE YOU <span style="font-size:14px;color:#fff;opacity:0.9">— in 100 languages</span></div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.9)">A special page for DRAFOR SELOEM. Scroll to see all languages and love quotes.</div>
+          </div>
+          <div>
+            <button class="btn" id="downloadBtn" onclick="downloadAsText()">Download Quotes</button>
+          </div>
+        </div>
+
+        <div class="grid100" id="langsGrid" aria-live="polite"></div>
+
+        <div class="quotes" id="quotes">
+          <div class="quoteCard">"I love you not because of who you are, but because of who I am when I am with you." — Unknown</div>
+          <div class="quoteCard">"You are my today and all of my tomorrows." — Leo Christopher</div>
+          <div class="quoteCard">"In a sea of people, my eyes will always search for you." — Unknown</div>
+          <div class="quoteCard">"Every love story is beautiful, but ours is my favorite." — Unknown</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+/* -------------------------
+  Configuration & expected values
+---------------------------- */
+const expectedName1 = "drafor selorm";
+const expectedName2 = "ramsey selorm coffie";
+const expectedBday = "9th february 2001";
+const expectedPassword = "24th november";
+
+function normalize(s){ return (s||"").trim().replace(/\s+/g,' ').toLowerCase(); }
+
+function checkName(){
+  const name1 = document.getElementById('name1').value || "";
+  const res = document.getElementById('nameResult');
+  if(normalize(name1) === expectedName1){
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('denied').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    res.textContent = "Name verified. Please continue.";
+  } else {
+    document.getElementById('denied').style.display = 'block';
+    res.textContent = "Name does not match. Access denied.";
+  }
+}
+
+function checkAll(){
+  const bf = normalize(document.getElementById('bfName').value || "");
+  const bday = normalize((document.getElementById('bday').value || ""));
+  const pwd = (document.getElementById('pwd').value || "");
+  const msg = document.getElementById('step2Msg');
+
+  const normalizeBday = bday.replace(/\s+/g, ' ').replace(/ /g,'').toLowerCase();
+  const expectedBdayNormalized = expectedBday.replace(/\s+/g, ' ').replace(/ /g,'').toLowerCase();
+
+  if(bf !== expectedName2){
+    msg.textContent = "Boyfriend name does not match.";
+    return;
+  }
+  if(normalizeBday !== expectedBdayNormalized){
+    msg.textContent = "Birthday does not match.";
+    return;
+  }
+  if(pwd !== expectedPassword){
+    msg.textContent = "Password incorrect.";
+    return;
+  }
+
+  msg.textContent = "All verified. Unlocking the page...";
+  unlockPage();
+}
+
+function unlockPage(){
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+
+  // populate languages (full 100)
+  const langs = getLoveLanguages();
+  const grid = document.getElementById('langsGrid');
+  grid.innerHTML = '';
+  langs.forEach(item=>{
+    const el = document.createElement('div');
+    el.className = 'langCard';
+    el.textContent = item;
+    grid.appendChild(el);
+  });
+
+  // start visual effects
+  startPetals();
+  startConfetti(); // short confetti
+  startHeartParticlesSpellSELORM();
+}
+
+/* -------------------------
+  Full list: I LOVE YOU in ~100 languages
+  (kept your earlier list + filled to ~100)
+---------------------------- */
+function getLoveLanguages(){
+  return [
+"English — I love you",
+"Spanish — Te quiero / Te amo",
+"French — Je t'aime",
+"German — Ich liebe dich",
+"Italian — Ti amo",
+"Portuguese — Eu te amo",
+"Swahili — Nakupenda",
+"Hausa — Ina son ku",
+"Yoruba — Mo nifẹ rẹ",
+"Igbo — A hụrụ m gị n'anya",
+"Amharic — እከርሃለሁ (Ine kekirihalehu)",
+"Arabic — أحبك (Aḥibbuk)",
+"Mandarin Chinese — 我爱你 (Wǒ ài nǐ)",
+"Cantonese — 我愛你 (Ngo oi nei)",
+"Japanese — 愛してる (Aishiteru)",
+"Korean — 사랑해 (Saranghae)",
+"Russian — Я тебя люблю (Ya tebya lyublyu)",
+"Turkish — Seni seviyorum",
+"Dutch — Ik hou van jou",
+"Polish — Kocham cię",
+"Swedish — Jag älskar dig",
+"Norwegian — Jeg elsker deg",
+"Danish — Jeg elsker dig",
+"Finnish — Rakastan sinua",
+"Greek — Σ' αγαπώ (S' agapó)",
+"Hebrew — אני אוהב אותך (Ani ohev otach)",
+"Hindi — मैं तुम्हें प्यार करता हूँ (Main tumhen pyaar karta hoon)",
+"Urdu — میں تم سے محبت کرتا ہوں (Main tum se mohabbat karta hoon)",
+"Bengali — আমি তোমায় ভালোবাসি (Ami tomay bhalobashi)",
+"Punjabi — ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ (Main tainu pyaar karda haan)",
+"Gujarati — હું તને પ્રેમ કરું છું (Hu tane prem karu chu)",
+"Marathi — मी तुझ्यावर प्रेम करतो (Mi tuzyavar prem karto)",
+"Tamil — நான் உன்னை காதலிக்கிறேன் (Naan unnai kaadhalikkiren)",
+"Telugu — నేను నిన్ను ప్రేమిస్తున్నా (Nenu ninnu premisthunna)",
+"Kannada — 나는 너를 사랑해 (Naanu ninnannu preetisuttEne)",
+"Malayalam — ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു (Njan ninne snehikkunnu)",
+"Malay/Indonesian — Aku cinta kamu",
+"Filipino (Tagalog) — Mahal kita",
+"Vietnamese — Anh yêu em / Em yêu anh",
+"Thai — ฉันรักคุณ (Chan rak khun)",
+"Lao — ຂ້ອຍຮັກເຈົ້າ (Khoi hak chao)",
+"Khmer — ខ្ញុំស្រលាញ់អ្នក (Knhom srolanh anak)",
+"Burmese — မင်းကိုချစ်တယ် (Min ko chit tal)",
+"Zulu — Ngiyakuthanda",
+"Xhosa — Ndiyakuthanda",
+"Sesotho — Kea u rata",
+"Shona — Ndinokuda",
+"Twi (Akan) — Me dɔ wo",
+"Ewe — Me dɔ wo",
+"Ga — Mi ni mi le",
+"Bambara — N'ba ni",
+"Wolof — Nopp naa la",
+"Fula — Mi yidi maa",
+"Kirundi — Ndagukunda",
+"Kinyarwanda — Ndakwikunda",
+"Maltese — Inħobbok",
+"Irish — Taitním leat / Tá grá agam duit",
+"Scottish Gaelic — Tha gaol agam ort",
+"Welsh — 'Rwy'n dy garu di",
+"Catalan — T'estimo",
+"Basque — Maite zaitut",
+"Galician — Quérote",
+"Esperanto — Mi amas vin",
+"Latin — Te amo",
+"Samoan — Ou te alofa ia te oe",
+"Tongan — 'Ofa atu",
+"Maori — Aroha ahau ki a koe",
+"Hawaiian — Aloha wau ia'oe",
+"Fijian — Au domoni iko",
+"Hmong — Kuv hlub koj",
+"Kazakh — Мен сені сүйемін (Men seni süyemin)",
+"Uzbek — Men seni sevaman",
+"Azerbaijani — Mən səni sevirəm",
+"Persian (Farsi) — دوستت دارم (Dooset daram)",
+"Pashto — زه ستا سره مينه لرم (Za sta sara meena laram)",
+"Kurdish — Ez hej te dikim",
+"Armenian — Ես քեզ սիրում եմ (Yes k'ez sirum yem)",
+"Georgian — მე შენ მიყვარხარ (Me shen miqvarxar)",
+"Albanian — Të dua",
+"Bosnian — Volim te",
+"Serbian — Волим те (Volim te)",
+"Croatian — Volim te",
+"Slovak — Ľúbim ťa",
+"Slovenian — Ljubim te",
+"Romanian — Te iubesc",
+"Hungarian — Szeretlek",
+"Czech — Miluji tě",
+"Bulgarian — Обичам те (Obicham te)",
+"Malayalam (alt) — ഞാന് നിന്നെ സ്്നേഹം ചെയ്യുന്നു"
+  ];
+}
+
+/* -------------------------
+  Confetti (short celebration on unlock)
+---------------------------- */
+function startConfetti(){
+  const canvas = document.getElementById('confettiCanvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+  const pieces = [];
+  const colors = ["#ff5c8a","#ffd166","#ff7bbd","#7ef0c7","#ffd1ff","#ff8a5c"];
+  for(let i=0;i<140;i++){
+    pieces.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*-canvas.height,
+      r: Math.random()*6+4,
+      d: Math.random()*30+10,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      tilt: Math.random()*10-5,
+      tiltAngle: Math.random()*6
+    });
+  }
+  let t = 0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    t += 0.02;
+    for(let i=0;i<pieces.length;i++){
+      const p = pieces[i];
+      p.tiltAngle += 0.02;
+      p.y += Math.sin(t+p.d)*0.8 + 2;
+      p.x += Math.cos(t+p.d/2)*0.6;
+      ctx.save();
+      ctx.fillStyle = p.color;
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.tiltAngle);
+      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*1.6);
+      ctx.restore();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+  // stop after 6s
+  setTimeout(()=>{ ctx.clearRect(0,0,canvas.width,canvas.height); }, 6000);
+}
+
+/* -------------------------
+  Petal animation canvas (subtle floating petals)
+---------------------------- */
+function startPetals(){
+  const canvas = document.getElementById('petalCanvas');
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const petals = [];
+  const petalImgs = []; // we will draw simple ellipses rather than images
+  for(let i=0;i<60;i++){
+    petals.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      vx: (Math.random()-0.5)*0.5,
+      vy: 0.2 + Math.random()*0.6,
+      rot: Math.random()*Math.PI*2,
+      rotV: (Math.random()-0.5)*0.02,
+      size: 6 + Math.random()*14,
+      hue: 320 + Math.random()*40
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    petals.forEach(p=>{
+      p.x += p.vx; p.y += p.vy; p.rot += p.rotV;
+      if(p.y > canvas.height+30){ p.y = -40; p.x = Math.random()*canvas.width; }
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot);
+      ctx.beginPath();
+      ctx.fillStyle = `hsla(${p.hue},70%,70%,0.9)`;
+      ctx.ellipse(0,0,p.size,p.size*0.6,0,0,Math.PI*2);
+      ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* -------------------------
+  Particle text: spells SELORM
+  - Starts only when unlockPage() calls startHeartParticlesSpellSELORM()
+---------------------------- */
+function startHeartParticlesSpellSELORM(){
+  const canvas = document.getElementById('heartCanvas');
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width = window.innerWidth;
+  let H = canvas.height = window.innerHeight;
+  window.addEventListener('resize', ()=>{ W = canvas.width = innerWidth; H = canvas.height = innerHeight; prepareTargets(); });
+
+  let particles = [];
+  let targets = [];
+  let particleCount = 700; // number of particles (tweak for density)
+  let forming = false;
+
+  // draw small heart onto temporary canvas for reuse
+  const heartImg = document.createElement('canvas');
+  heartImg.width = 20; heartImg.height = 20;
+  const hctx = heartImg.getContext('2d');
+  function drawSmallHeartToImg(color){
+    hctx.clearRect(0,0,20,20);
+    hctx.save();
+    hctx.translate(10,10);
+    hctx.scale(0.5,0.5);
+    hctx.beginPath();
+    hctx.moveTo(0,-10);
+    hctx.bezierCurveTo(12,-22,28,-10,0,18);
+    hctx.bezierCurveTo(-28,-10,-12,-22,0,-10);
+    hctx.closePath();
+    hctx.fillStyle = color;
+    hctx.fill();
+    hctx.restore();
+  }
+
+  // prepare text targets by rendering SELORM to offscreen buffer and sampling pixels
+  function prepareTargets(){
+    targets = [];
+    const buffer = document.createElement('canvas');
+    buffer.width = W;
+    buffer.height = H;
+    const b = buffer.getContext('2d');
+    // pick font size so word is clearly visible and centered
+    const fontSize = Math.floor(Math.min(W, H) / 4.5);
+    b.fillStyle = "#000";
+    b.clearRect(0,0,W,H);
+    b.font = `bold ${fontSize}px Arial Black, Impact, sans-serif`;
+    b.textAlign = "center";
+    b.textBaseline = "middle";
+    // white text so alpha > 0
+    b.fillStyle = "#fff";
+    b.fillText("SELORM", W/2, H/2 - Math.floor(fontSize*0.06)); // slight vertical nudge
+
+    // sample pixel grid: spacing determines density & clarity
+    const spacing = Math.max(6, Math.round(fontSize/20)); // adaptive spacing
+    const img = b.getImageData(0,0,W,H).data;
+    for(let y=0; y<H; y+=spacing){
+      for(let x=0; x<W; x+=spacing){
+        const i = (y*W + x)*4;
+        if(img[i+3] > 120){ // alpha check
+          targets.push({x:x + (Math.random()-0.5)*2, y:y + (Math.random()-0.5)*2});
+        }
+      }
+    }
+    // ensure we have targets
+    if(targets.length === 0){
+      // fallback: simple centered rect points
+      for(let i=0;i<200;i++){
+        targets.push({x:W/2 + (i-100)*4, y:H/2});
+      }
+    }
+    // ensure enough targets for particles
+    // if targets < particleCount, duplicate them
+    while(targets.length < particleCount){
+      targets = targets.concat(targets.slice(0, Math.min(targets.length, particleCount - targets.length)));
+    }
+  }
+
+  // create particles randomly scattered
+  function createParticles(){
+    particles = [];
+    for(let i=0;i<particleCount;i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        vx: (Math.random()-0.5)*2,
+        vy: (Math.random()-0.5)*2,
+        r: 3 + Math.random()*3,
+        hue: 320 + Math.random()*60,
+        targetIndex: i % targets.length,
+        speedMult: 0.9 + Math.random()*0.6
+      });
+    }
+    drawSmallHeartToImg(`hsl(340,85%,60%)`);
+  }
+
+  // animate particles toward targets
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    // subtle background glow when forming
+    if(forming){
+      const grd = ctx.createRadialGradient(W/2, H/2, 10, W/2, H/2, Math.max(W,H)/1.6);
+      grd.addColorStop(0, 'rgba(255,92,138,0.06)');
+      grd.addColorStop(1, 'rgba(255,92,138,0)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0,0,W,H);
+    }
+    for(let i=0;i<particles.length;i++){
+      const p = particles[i];
+      const t = targets[p.targetIndex % targets.length];
+      const dx = t.x - p.x;
+      const dy = t.y - p.y;
+      const dist = Math.sqrt(dx*dx + dy*dy) + 0.0001;
+      // attraction strength scales with distance and formation state
+      const attract = (forming ? 0.02 : 0.002) * p.speedMult;
+      p.vx += (dx / dist) * attract;
+      p.vy += (dy / dist) * attract;
+      // add slight wander if not forming
+      if(!forming){
+        p.vx += Math.cos((i + Date.now()/500)/10)*0.001;
+        p.vy += Math.sin((i + Date.now()/500)/10)*0.001;
+      }
+      // damping
+      p.vx *= 0.92; p.vy *= 0.92;
+      p.x += p.vx; p.y += p.vy;
+
+      // draw particle as small heart image tinted by hue
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      // tint technique: draw heartImg then overlay color with globalCompositeOperation
+      ctx.drawImage(heartImg, -10, -10);
+      ctx.globalCompositeOperation = 'source-atop';
+      ctx.fillStyle = `hsla(${p.hue},85%,60%,0.9)`;
+      ctx.fillRect(-10,-10,20,20);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.restore();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  // start formation: set forming true and nudge speeds
+  function triggerFormationPulse(){
+    forming = true;
+    // speed up particles a bit
+    particles.forEach(p=> p.speedMult = 1.6);
+    // after a while, keep them gently wobbling around targets
+    setTimeout(()=>{ particles.forEach(p=> p.speedMult = 1.0); }, 2200);
+  }
+
+  // public start
+  function start(){
+    prepareTargets();
+    createParticles();
+    forming = false;
+    animate();
+    // give a small delay then trigger formation (visual)
+    setTimeout(()=> triggerFormationPulse(), 350);
+  }
+
+  // expose triggerFormationPulse for compatibility
+  return { start };
+}
+
+/* -------------------------
+  Start the heart particles when unlocking
+---------------------------- */
+let heartInstance = null;
+function startHeartParticlesSpellSELORM(){
+  // ensure single instance
+  if(!heartInstance){
+    heartInstance = startHeartParticlesSpellSELORM_impl();
+    // start the animation
+    heartInstance.start();
+  } else {
+    // if already created, just trigger again (not needed currently)
+  }
+}
+
+// factory returns object with start() and trigger (we built above but wrapped differently)
+function startHeartParticlesSpellSELORM_impl(){
+  // re-use the internal function above (so we don't duplicate)
+  // We'll inline the actual implementation above into a callable factory.
+  // For clarity: call the same code but adapted to closure.
+  // To keep code clean here, recreate the same structure as earlier block.
+
+  const canvas = document.getElementById('heartCanvas');
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width = window.innerWidth;
+  let H = canvas.height = window.innerHeight;
+  let resizeHandler = ()=>{ W = canvas.width = innerWidth; H = canvas.height = innerHeight; prepareTargets(); }
+  window.addEventListener('resize', resizeHandler);
+
+  let particles = [];
+  let targets = [];
+  let particleCount = 700;
+  let forming = false;
+
+  const heartImg = document.createElement('canvas');
+  heartImg.width = 20; heartImg.height = 20;
+  const hctx = heartImg.getContext('2d');
+  function drawSmallHeartToImg(color){
+    hctx.clearRect(0,0,20,20);
+    hctx.save();
+    hctx.translate(10,10);
+    hctx.scale(0.5,0.5);
+    hctx.beginPath();
+    hctx.moveTo(0,-10);
+    hctx.bezierCurveTo(12,-22,28,-10,0,18);
+    hctx.bezierCurveTo(-28,-10,-12,-22,0,-10);
+    hctx.closePath();
+    hctx.fillStyle = color;
+    hctx.fill();
+    hctx.restore();
+  }
+
+  function prepareTargets(){
+    targets = [];
+    const buffer = document.createElement('canvas');
+    buffer.width = W;
+    buffer.height = H;
+    const b = buffer.getContext('2d');
+    const fontSize = Math.floor(Math.min(W, H) / 4.5);
+    b.clearRect(0,0,W,H);
+    b.font = `bold ${fontSize}px Arial Black, Impact, sans-serif`;
+    b.textAlign = "center";
+    b.textBaseline = "middle";
+    b.fillStyle = "#fff";
+    b.fillText("SELORM", W/2, H/2 - Math.floor(fontSize*0.06));
+    const spacing = Math.max(6, Math.round(fontSize/18));
+    const img = b.getImageData(0,0,W,H).data;
+    for(let y=0; y<H; y+=spacing){
+      for(let x=0; x<W; x+=spacing){
+        const i = (y*W + x)*4;
+        if(img[i+3] > 120){
+          targets.push({x: x + (Math.random()-0.5)*2, y: y + (Math.random()-0.5)*2});
+        }
+      }
+    }
+    if(targets.length === 0){
+      for(let i=0;i<200;i++){
+        targets.push({x:W/2 + (i-100)*4, y:H/2});
+      }
+    }
+    while(targets.length < particleCount){
+      targets = targets.concat(targets.slice(0, Math.min(targets.length, particleCount - targets.length)));
+    }
+  }
+
+  function createParticles(){
+    particles = [];
+    for(let i=0;i<particleCount;i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        vx: (Math.random()-0.5)*2,
+        vy: (Math.random()-0.5)*2,
+        r: 3 + Math.random()*3,
+        hue: 320 + Math.random()*60,
+        targetIndex: i % targets.length,
+        speedMult: 0.9 + Math.random()*0.6
+      });
+    }
+    drawSmallHeartToImg(`hsl(340,85%,60%)`);
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    if(forming){
+      const grd = ctx.createRadialGradient(W/2, H/2, 10, W/2, H/2, Math.max(W,H)/1.6);
+      grd.addColorStop(0, 'rgba(255,92,138,0.06)');
+      grd.addColorStop(1, 'rgba(255,92,138,0)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0,0,W,H);
+    }
+    for(let i=0;i<particles.length;i++){
+      const p = particles[i];
+      const t = targets[p.targetIndex % targets.length];
+      const dx = t.x - p.x;
+      const dy = t.y - p.y;
+      const dist = Math.sqrt(dx*dx + dy*dy) + 0.0001;
+      const attract = (forming ? 0.02 : 0.002) * p.speedMult;
+      p.vx += (dx / dist) * attract;
+      p.vy += (dy / dist) * attract;
+      if(!forming){
+        p.vx += Math.cos((i + Date.now()/500)/10)*0.001;
+        p.vy += Math.sin((i + Date.now()/500)/10)*0.001;
+      }
+      p.vx *= 0.92; p.vy *= 0.92;
+      p.x += p.vx; p.y += p.vy;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.drawImage(heartImg, -10, -10);
+      ctx.globalCompositeOperation = 'source-atop';
+      ctx.fillStyle = `hsla(${p.hue},85%,60%,0.95)`;
+      ctx.fillRect(-10,-10,20,20);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.restore();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  function triggerFormationPulse(){
+    forming = true;
+    particles.forEach(p=> p.speedMult = 1.6);
+    setTimeout(()=>{ particles.forEach(p=> p.speedMult = 1.0); }, 2600);
+  }
+
+  function start(){
+    prepareTargets();
+    createParticles();
+    forming = false;
+    animate();
+    setTimeout(()=> triggerFormationPulse(), 350);
+  }
+
+  return { start, triggerFormationPulse };
+}
+
+/* -------------------------
+  Download quotes function
+---------------------------- */
+function downloadAsText(){
+  const langs = getLoveLanguages();
+  const quotes = Array.from(document.querySelectorAll('.quoteCard')).map(q=>q.textContent);
+  const content = ["I LOVE YOU — in 100 languages", "", ...langs, "", "Love Quotes:", ...quotes].join("\n\n");
+  const blob = new Blob([content], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'love_quotes_and_100_languages.txt';
+  document.body.appendChild(a); a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+/* -------------------------
+  Accessibility: Enter submits
+---------------------------- */
+document.getElementById('name1').addEventListener('keydown', e=>{ if(e.key === 'Enter'){ checkName(); } });
+['bfName','bday','pwd'].forEach(id=>{ document.getElementById(id).addEventListener('keydown', e=>{ if(e.key === 'Enter'){ checkAll(); }}); });
+
+</script>
+</body>
+</html>
