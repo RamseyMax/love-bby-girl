@@ -2,82 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Drafor Selorm ❤️</title>
 <style>
-  :root{
-    --bg1: #0f2027;
-    --bg2: #203a43;
-    --accent: #ff5c8a;
-    --gold: #ffd166;
-    --glass: rgba(255,255,255,0.06);
-  }
-  *{box-sizing:border-box;font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}
-  html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;overflow:hidden}
-  .center { display:grid;place-items:center;height:100vh;padding:20px; }
-
-  .card {
-    width:930px; max-width:100%;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:16px; padding:28px;
-    box-shadow:0 10px 40px rgba(2,6,23,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
-    backdrop-filter: blur(6px);
-    position:relative; overflow:hidden;
-  }
-  h1{margin:0 0 6px 0;font-size:22px;letter-spacing:0.6px}
-  p.lead{margin:0 0 18px 0;opacity:0.95}
-
-  form.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-  label{display:block;font-size:12px;color:rgba(255,255,255,0.95);margin-bottom:6px}
-  input[type="text"], input[type="password"], input[type="date"]{
-    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
-    background:transparent; color:#fff; font-size:14px; outline:none;
-  }
-
-  .btn {
-    display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7bbd);
-    color:#fff;text-decoration:none;border:none;cursor:pointer;font-weight:600;letter-spacing:0.3px;
-  }
-
-  .muted{font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px}
-
-  .denied{
-    background:linear-gradient(90deg,#3b0f1f,#3b111f);
-    padding:16px;border-radius:10px;margin-top:12px;color:#ffdede;font-weight:600;
-  }
-
-  #mainContent{display:none;padding-top:18px}
-  .grid100{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
-    max-height:320px;overflow:auto;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
-  }
-  .langCard{
-    background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:13px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.35);
-  }
-
-  .quotes{margin-top:18px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
-  .quoteCard{
-    flex:1 1 45%;min-width:250px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:14px;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;
-  }
-
-  .bigTitle{
-    font-size:40px;margin:10px 0 6px 0;color:var(--gold);text-shadow:0 6px 40px rgba(0,0,0,0.55);
-    display:flex;align-items:center;gap:10px;
-  }
-
-  #confettiCanvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3}
-  #heartCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:1;pointer-events:none}
-  #petalCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:2;pointer-events:none}
-  .card{position:relative;z-index:4}
-
-  @media (max-width:860px){
-    .grid100{grid-template-columns:repeat(2,1fr)}
-    form.row{grid-template-columns:1fr}
-    .bigTitle{font-size:28px}
-  }
+:root {
+  --bg1:#0f2027; --bg2:#203a43; --accent:#ff5c8a; --gold:#ffd166; --glass:rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;padding:0;}
+html,body{height:100%;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;overflow:hidden;}
+.center { display:grid; place-items:center; height:100vh; padding:10px; }
+.card {
+  width:90%; max-width:950px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px; padding:20px; box-shadow:0 10px 40px rgba(2,6,23,0.6),0 1px 0 rgba(255,255,255,0.02) inset;
+  backdrop-filter:blur(6px); position:relative; overflow:hidden;
+}
+h1{margin-bottom:6px;font-size:22px;letter-spacing:0.6px;}
+p.lead{margin-bottom:18px;opacity:0.95;}
+form.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+label{display:block;font-size:12px;color:rgba(255,255,255,0.95);margin-bottom:6px;}
+input[type="text"], input[type="password"], input[type="date"]{
+  width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
+  background:transparent; color:#fff; font-size:14px; outline:none;
+}
+.btn {
+  display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7bbd);
+  color:#fff;text-decoration:none;border:none;cursor:pointer;font-weight:600;letter-spacing:0.3px;
+}
+.muted{font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px;}
+.denied{
+  background:linear-gradient(90deg,#3b0f1f,#3b111f);padding:16px;border-radius:10px;margin-top:12px;
+  color:#ffdede;font-weight:600;
+}
+#mainContent{display:none;padding-top:18px;}
+.grid100{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-height:320px;overflow:auto;padding:10px;
+  border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
+}
+.langCard{
+  background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:13px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+}
+.quotes{margin-top:18px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;}
+.quoteCard{
+  flex:1 1 45%;min-width:250px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:14px;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;
+}
+.bigTitle{
+  font-size:36px;margin:10px 0 6px 0;color:var(--gold);text-shadow:0 6px 40px rgba(0,0,0,0.55);
+  display:flex;align-items:center;gap:10px;
+}
+#confettiCanvas,#heartCanvas,#petalCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;}
+#confettiCanvas{z-index:3;} #petalCanvas{z-index:2;} #heartCanvas{z-index:1;}
+.card{position:relative;z-index:4;}
+@media (max-width:860px){
+  .grid100{grid-template-columns:repeat(2,1fr)}
+  form.row{grid-template-columns:1fr}
+  .bigTitle{font-size:28px}
+}
+@media (max-width:500px){
+  .bigTitle{font-size:22px;}
+}
 </style>
 </head>
 <body>
@@ -86,276 +71,161 @@
 <canvas id="confettiCanvas" aria-hidden="true"></canvas>
 
 <div class="center">
-  <div class="card" id="card">
-    <h1>For: DRAFOR SELORM ❤️</h1>
-    <p class="lead">Please enter your full name to continue. If the name does not match exactly, access will be denied.</p>
+<div class="card" id="card">
+<h1>For: DRAFOR SELORM ❤️</h1>
+<p class="lead">Please enter your full name to continue. If the name does not match exactly, access will be denied.</p>
 
-    <div id="step1">
-      <form id="form1" onsubmit="return false;">
-        <div class="row">
-          <div>
-            <label>Enter your full name</label>
-            <input id="name1" type="text" autocomplete="off" required />
-          </div>
-          <div style="align-self:end;">
-            <button class="btn" id="checkNameBtn" onclick="checkName()">Submit</button>
-          </div>
-        </div>
-      </form>
-      <div id="nameResult" class="muted"></div>
-    </div>
+<div id="step1">
+<form id="form1" onsubmit="return false;">
+<div class="row">
+<div>
+<label>Enter your full name</label>
+<input id="name1" type="text" autocomplete="off" required />
+</div>
+<div style="align-self:end;">
+<button class="btn" id="checkNameBtn" onclick="checkName()">Submit</button>
+</div>
+</div>
+</form>
+<div id="nameResult" class="muted"></div>
+</div>
 
-    <div id="step2" style="display:none;margin-top:12px;">
-      <form id="form2" onsubmit="return false;">
-        <div class="row">
-          <div>
-            <label>Enter your boyfriend's full name</label>
-            <input id="bfName" type="text" autocomplete="off" required />
-          </div>
-          <div>
-            <label>Enter bfs birthday</label>
-            <input id="bday" type="text" autocomplete="off" required />
-          </div>
-        </div>
-        <div class="row" style="margin-top:8px;">
-          <div>
-            <label>Create / enter password</label>
-            <input id="pwd" type="password" autocomplete="off" required />
-          </div>
-          <div style="align-self:end;">
-            <button class="btn" onclick="checkAll()">Unlock</button>
-          </div>
-        </div>
-      </form>
-      <div id="step2Msg" class="muted">All values must match the expected values to unlock the page.</div>
-    </div>
+<div id="step2" style="display:none;margin-top:12px;">
+<form id="form2" onsubmit="return false;">
+<div class="row">
+<div>
+<label>Enter your boyfriend's full name</label>
+<input id="bfName" type="text" autocomplete="off" required />
+</div>
+<div>
+<label>Enter bfs birthday</label>
+<input id="bday" type="text" autocomplete="off" required />
+</div>
+</div>
+<div class="row" style="margin-top:8px;">
+<div>
+<label>Create / enter password</label>
+<input id="pwd" type="password" autocomplete="off" required />
+</div>
+<div style="align-self:end;">
+<button class="btn" onclick="checkAll()">Unlock</button>
+</div>
+</div>
+</form>
+<div id="step2Msg" class="muted">All values must match the expected values to unlock the page.</div>
+</div>
 
-    <div id="denied" style="display:none;" class="denied">Access Denied — name does not match.</div>
+<div id="denied" style="display:none;" class="denied">Access Denied — name does not match.</div>
 
-    <div id="mainContent">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <div>
-          <div class="bigTitle">I LOVE YOU <span style="font-size:14px;color:#fff;opacity:0.9">— in 100 languages</span></div>
-          <div style="font-size:14px;color:rgba(255,255,255,0.9)">A special page for DRAFOR SELORM. Scroll to see all languages and love quotes.</div>
-        </div>
-        <div>
-          <button class="btn" id="downloadBtn" onclick="downloadAsText()">Download Quotes</button>
-        </div>
-      </div>
+<div id="mainContent">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+<div>
+<div class="bigTitle">I LOVE YOU <span style="font-size:14px;color:#fff;opacity:0.9">— in 100 languages</span></div>
+<div style="font-size:14px;color:rgba(255,255,255,0.9)">A special page for DRAFOR SELORM. Scroll to see all languages and love quotes.</div>
+</div>
+<div>
+<button class="btn" id="downloadBtn" onclick="downloadAsText()">Download Quotes</button>
+</div>
+</div>
 
-      <div class="grid100" id="langsGrid" aria-live="polite"></div>
+<div class="grid100" id="langsGrid" aria-live="polite"></div>
 
-      <div class="quotes" id="quotes">
-        <div class="quoteCard">"I love you not because of who you are, but because of who I am when I am with you." — Unknown</div>
-        <div class="quoteCard">"You are my today and all of my tomorrows." — Leo Christopher</div>
-        <div class="quoteCard">"In a sea of people, my eyes will always search for you." — Unknown</div>
-        <div class="quoteCard">"Every love story is beautiful, but ours is my favorite." — Unknown</div>
-      </div>
-    </div>
-  </div>
+<div class="quotes" id="quotes">
+<div class="quoteCard">"I love you not because of who you are, but because of who I am when I am with you." — Unknown</div>
+<div class="quoteCard">"You are my today and all of my tomorrows." — Leo Christopher</div>
+<div class="quoteCard">"In a sea of people, my eyes will always search for you." — Unknown</div>
+<div class="quoteCard">"Every love story is beautiful, but ours is my favorite." — Unknown</div>
+</div>
+
+</div>
+</div>
 </div>
 
 <script>
+// Expected values
 const expectedName1 = "drafor selorm";
 const expectedName2 = "ramsey selorm coffie";
 const expectedBday = "9th february 2001";
 const expectedPassword = "24th november";
-function normalize(s){ return (s||"").trim().replace(/\s+/g,' ').toLowerCase(); }
+
+function normalize(s){return (s||"").trim().replace(/\s+/g,' ').toLowerCase();}
+
 function checkName(){
   const name1 = document.getElementById('name1').value || "";
   const res = document.getElementById('nameResult');
-  if(normalize(name1) === expectedName1){
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('denied').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-    res.textContent = "Name verified. Please continue.";
+  if(normalize(name1)===expectedName1){
+    document.getElementById('step1').style.display='none';
+    document.getElementById('denied').style.display='none';
+    document.getElementById('step2').style.display='block';
+    res.textContent="Name verified. Please continue.";
   } else {
-    document.getElementById('denied').style.display = 'block';
-    res.textContent = "Name does not match. Access denied.";
+    document.getElementById('denied').style.display='block';
+    res.textContent="Name does not match. Access denied.";
   }
 }
+
 function checkAll(){
   const bf = normalize(document.getElementById('bfName').value || "");
   const bday = normalize((document.getElementById('bday').value || ""));
   const pwd = (document.getElementById('pwd').value || "");
   const msg = document.getElementById('step2Msg');
-  const normalizeBday = bday.replace(/\s+/g, '').toLowerCase();
-  const expectedBdayNormalized = expectedBday.replace(/\s+/g, '').toLowerCase();
-  if(bf !== expectedName2){ msg.textContent = "Boyfriend name does not match."; return; }
-  if(normalizeBday !== expectedBdayNormalized){ msg.textContent = "Birthday does not match."; return; }
-  if(pwd !== expectedPassword){ msg.textContent = "Password incorrect."; return; }
-  msg.textContent = "All verified. Unlocking the page...";
+  const normalizeBday = bday.replace(/\s+/g,'').toLowerCase();
+  const expectedBdayNormalized = expectedBday.replace(/\s+/g,'').toLowerCase();
+  if(bf!==expectedName2){ msg.textContent="Boyfriend name does not match."; return;}
+  if(normalizeBday!==expectedBdayNormalized){ msg.textContent="Birthday does not match."; return;}
+  if(pwd!==expectedPassword){ msg.textContent="Password incorrect."; return;}
+  msg.textContent="All verified. Unlocking the page...";
   unlockPage();
 }
 
 function unlockPage(){
-  document.getElementById('step2').style.display = 'none';
-  document.getElementById('mainContent').style.display = 'block';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('mainContent').style.display='block';
   const langs = getLoveLanguages();
-  const grid = document.getElementById('langsGrid');
-  grid.innerHTML = '';
-  langs.forEach(item=>{
-    const el = document.createElement('div');
-    el.className = 'langCard';
-    el.textContent = item;
-    grid.appendChild(el);
-  });
-  startPetals();
-  startConfetti();
-  startHeartParticlesSpellSELORM();
+  const grid = document.getElementById('langsGrid'); grid.innerHTML='';
+  langs.forEach(item=>{ const el=document.createElement('div'); el.className='langCard'; el.textContent=item; grid.appendChild(el);});
+  startPetals(); startConfetti(); startHeartParticlesSpellSELORM();
 }
 
-function getLoveLanguages(){
-  return [
-"English — I love you","Spanish — Te quiero / Te amo","French — Je t'aime","German — Ich liebe dich",
-"Italian — Ti amo","Portuguese — Eu te amo","Swahili — Nakupenda","Hausa — Ina son ku","Yoruba — Mo nifẹ rẹ",
-"Igbo — A hụrụ m gị n'anya","Amharic — እከርሃለሁ","Arabic — أحبك","Mandarin Chinese — 我爱你","Cantonese — 我愛你",
-"Japanese — 愛してる","Korean — 사랑해","Russian — Я тебя люблю","Turkish — Seni seviyorum","Dutch — Ik hou van jou",
-"Polish — Kocham cię","Swedish — Jag älskar dig","Norwegian — Jeg elsker deg","Danish — Jeg elsker dig",
-"Finnish — Rakastan sinua","Greek — Σ' αγαπώ","Hebrew — אני אוהב אותך","Hindi — मैं तुम्हें प्यार करता हूँ",
-"Urdu — میں تم سے محبت کرتا ہوں","Bengali — আমি তোমায় ভালোবাসি","Punjabi — ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ",
-"Gujarati — હું તને પ્રેમ કરું છું","Marathi — मी तुझ्यावर प्रेम करतो","Tamil — நான் உன்னை காதலிக்கிறேன்",
-"Telugu — నేను నిన్ను ప్రేమిస్తున్నా","Kannada — 나는 너를 사랑해","Malayalam — ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു","Malay/Indonesian — Aku cinta kamu",
-"Filipino (Tagalog) — Mahal kita","Vietnamese — Anh yêu em / Em yêu anh","Thai — ฉันรักคุณ","Lao — ຂ້ອຍຮັກເຈົ້າ",
-"Khmer — ខ្ញុំស្រលាញ់អ្នក","Burmese — မင်းကိုချစ်တယ်","Zulu — Ngiyakuthanda","Xhosa — Ndiyakuthanda","Sesotho — Kea u rata",
-"Shona — Ndinokuda","Twi (Akan) — Me dɔ wo","Ewe — Me dɔ wo","Ga — Mi ni mi le","Bambara — N'ba ni","Wolof — Nopp naa la",
-"Fula — Mi yidi maa","Kirundi — Ndagukunda","Kinyarwanda — Ndakwikunda","Maltese — Inħobbok","Irish — Taitním leat / Tá grá agam duit",
-"Scottish Gaelic — Tha gaol agam ort","Welsh — 'Rwy'n dy garu di","Catalan — T'estimo","Basque — Maite zaitut","Galician — Quérote",
-"Esperanto — Mi amas vin","Latin — Te amo","Samoan — Ou te alofa ia te oe","Tongan — 'Ofa atu","Maori — Aroha ahau ki a koe",
-"Hawaiian — Aloha wau ia'oe","Fijian — Au domoni iko","Hmong — Kuv hlub koj","Kazakh — Мен сені сүйемін",
-"Uzbek — Men seni sevaman","Azerbaijani — Mən səni sevirəm","Persian (Farsi) — دوستت دارم","Pashto — زه ستا سره مينه لرم",
+// Love languages
+function getLoveLanguages(){ return [
+"English — I love you","Spanish — Te quiero / Te amo","French — Je t'aime","German — Ich liebe dich","Italian — Ti amo",
+"Portuguese — Eu te amo","Swahili — Nakupenda","Hausa — Ina son ku","Yoruba — Mo nifẹ rẹ","Igbo — A hụrụ m gị n'anya",
+"Amharic — እከርሃለሁ","Arabic — أحبك","Mandarin — 我爱你","Cantonese — 我愛你","Japanese — 愛してる",
+"Korean — 사랑해","Russian — Я тебя люблю","Turkish — Seni seviyorum","Dutch — Ik hou van jou","Polish — Kocham cię",
+"Swedish — Jag älskar dig","Norwegian — Jeg elsker deg","Danish — Jeg elsker dig","Finnish — Rakastan sinua","Greek — Σ' αγαπώ",
+"Hebrew — אני אוהב אותך","Hindi — मैं तुम्हें प्यार करता हूँ","Urdu — میں تم سے محبت کرتا ہوں","Bengali — আমি তোমায় ভালোবাসি","Punjabi — ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ",
+"Gujarati — હું તને પ્રેમ કરું છું","Marathi — मी तुझ्यावर प्रेम करतो","Tamil — நான் உன்னை காதலிக்கிறேன்","Telugu — నేను నిన్ను ప్రేమిస్తున్నా","Kannada — 나는 너를 사랑해",
+"Malayalam — ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു","Malay/Indonesian — Aku cinta kamu","Filipino — Mahal kita","Vietnamese — Anh yêu em / Em yêu anh","Thai — ฉันรักคุณ",
+"Lao — ຂ້ອຍຮັກເຈົ້າ","Khmer — ខ្ញុំស្រលាញ់អ្នក","Burmese — မင်းကိုချစ်တယ်","Zulu — Ngiyakuthanda","Xhosa — Ndiyakuthanda",
+"Sesotho — Kea u rata","Shona — Ndinokuda","Twi — Me dɔ wo","Ewe — Me dɔ wo","Ga — Mi ni mi le",
+"Bambara — N'ba ni","Wolof — Nopp naa la","Fula — Mi yidi maa","Kirundi — Ndagukunda","Kinyarwanda — Ndakwikunda",
+"Maltese — Inħobbok","Irish — Taitním leat / Tá grá agam duit","Scottish Gaelic — Tha gaol agam ort","Welsh — 'Rwy'n dy garu di",
+"Catalan — T'estimo","Basque — Maite zaitut","Galician — Quérote","Esperanto — Mi amas vin","Latin — Te amo","Samoan — Ou te alofa ia te oe",
+"Tongan — 'Ofa atu","Maori — Aroha ahau ki a koe","Hawaiian — Aloha wau ia'oe","Fijian — Au domoni iko","Hmong — Kuv hlub koj",
+"Kazakh — Мен сені сүйемін","Uzbek — Men seni sevaman","Azerbaijani — Mən səni sevirəm","Persian — دوستت دارم","Pashto — زه ستا سره مينه لرم",
 "Kurdish — Ez hej te dikim","Armenian — Ես քեզ սիրում եմ","Georgian — მე შენ მიყვარხარ","Albanian — Të dua","Bosnian — Volim te",
-"Serbian — Волим те","Croatian — Volim te","Slovak — Ľúbim ťa","Slovenian — Ljubim te","Romanian — Te iubesc","Hungarian — Szeretlek",
-"Czech — Miluji tě","Bulgarian — Обичам те","Malayalam (alt) — ഞാന് നിന്നെ സ്‌നേഹം ചെയ്യുന്നു"
-  ];
+"Serbian — Волим те","Croatian — Volim te","Slovak — Ľúbim ťa","Slovenian — Ljubim te","Romanian — Te iubesc",
+"Hungarian — Szeretlek","Czech — Miluji tě","Bulgarian — Обичам те","Malayalam (alt) — ഞാന് നിന്നെ സ്‌നേഹം ചെയ്യുന്നു"];
 }
 
-function startConfetti(){
-  const canvas = document.getElementById('confettiCanvas');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const ctx = canvas.getContext('2d');
-  const pieces = [];
-  const colors = ["#ff5c8a","#ffd166","#ff7bbd","#7ef0c7","#ffd1ff","#ff8a5c"];
-  for(let i=0;i<140;i++){
-    pieces.push({x: Math.random()*canvas.width,y: Math.random()*-canvas.height,r: Math.random()*6+4,d: Math.random()*30+10,color: colors[Math.floor(Math.random()*colors.length)],tilt: Math.random()*10-5,tiltAngle: Math.random()*6});
-  }
-  let t = 0;
-  function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    t += 0.02;
-    for(let i=0;i<pieces.length;i++){
-      const p = pieces[i];
-      p.tiltAngle += 0.02;
-      p.y += Math.sin(t+p.d)*0.8 + 2;
-      p.x += Math.cos(t+p.d/2)*0.6;
-      ctx.save();
-      ctx.fillStyle = p.color;
-      ctx.translate(p.x,p.y);
-      ctx.rotate(p.tiltAngle);
-      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*1.6);
-      ctx.restore();
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-  setTimeout(()=>{ ctx.clearRect(0,0,canvas.width,canvas.height); }, 6000);
-}
+// Confetti
+function startConfetti(){const canvas=document.getElementById('confettiCanvas');canvas.width=window.innerWidth;canvas.height=window.innerHeight;const ctx=canvas.getContext('2d');const pieces=[];const colors=["#ff5c8a","#ffd166","#ff7bbd","#7ef0c7","#ffd1ff","#ff8a5c"];for(let i=0;i<140;i++){pieces.push({x:Math.random()*canvas.width,y:Math.random()*-canvas.height,r:Math.random()*6+4,d:Math.random()*30+10,color:colors[Math.floor(Math.random()*colors.length)],tilt:Math.random()*10-5,tiltAngle:Math.random()*6});}let t=0;function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);t+=0.02;for(let i=0;i<pieces.length;i++){const p=pieces[i];p.tiltAngle+=0.02;p.y+=Math.sin(t+p.d)*0.8+2;p.x+=Math.cos(t+p.d/2)*0.6;ctx.save();ctx.fillStyle=p.color;ctx.translate(p.x,p.y);ctx.rotate(p.tiltAngle);ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*1.6);ctx.restore();}requestAnimationFrame(draw);}draw(); setTimeout(()=>{ctx.clearRect(0,0,canvas.width,canvas.height);},6000);}
 
-function startPetals(){
-  const canvas = document.getElementById('petalCanvas');
-  const ctx = canvas.getContext('2d');
-  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-  resize(); window.addEventListener('resize', resize);
-  const petals = [];
-  for(let i=0;i<60;i++){
-    petals.push({x: Math.random()*canvas.width,y: Math.random()*canvas.height,vx: (Math.random()-0.5)*0.5,vy: 0.2 + Math.random()*0.6,rot: Math.random()*Math.PI*2,rotV: (Math.random()-0.5)*0.02,size: 6 + Math.random()*14,hue: 320 + Math.random()*40});
-  }
-  function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    petals.forEach(p=>{
-      p.x += p.vx; p.y += p.vy; p.rot += p.rotV;
-      if(p.y > canvas.height+30){ p.y = -40; p.x = Math.random()*canvas.width; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
-      ctx.beginPath(); ctx.fillStyle = `hsla(${p.hue},70%,70%,0.9)`; ctx.ellipse(0,0,p.size,p.size*0.5,0,0,2*Math.PI); ctx.fill();
-      ctx.restore();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-}
+// Petals
+function startPetals(){const canvas=document.getElementById('petalCanvas');const ctx=canvas.getContext('2d');function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();window.addEventListener('resize',resize);const petals=[];for(let i=0;i<60;i++){petals.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*0.5,vy:0.2+Math.random()*0.6,rot:Math.random()*Math.PI*2,rotV:(Math.random()-0.5)*0.02,size:6+Math.random()*14,hue:320+Math.random()*40});}function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);petals.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.rotV;if(p.y>canvas.height+30){p.y=-40;p.x=Math.random()*canvas.width;}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.beginPath();ctx.fillStyle=`hsla(${p.hue},70%,70%,0.9)`;ctx.ellipse(0,0,p.size,p.size*0.6,0,0,Math.PI*2);ctx.fill();ctx.restore();});requestAnimationFrame(draw);}draw();}
 
-// ----------------- HEART PARTICLE SPELL SELORM -----------------
+// Heart animation spelling SELORM
 function startHeartParticlesSpellSELORM(){
-  const canvas = document.getElementById('heartCanvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  const canvas=document.getElementById('heartCanvas');const ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();window.addEventListener('resize',resize);
 
-  const letters = "SELORM";
-  const fontSize = Math.floor(canvas.width/10);
-  const offCanvas = document.createElement('canvas');
-  const offCtx = offCanvas.getContext('2d');
-  offCanvas.width = canvas.width;
-  offCanvas.height = canvas.height;
+  const text="SELORM";const fontSize=80;const xOffset=canvas.width/2-150;const yOffset=canvas.height/2;ctx.font=`bold ${fontSize}px Arial`;ctx.fillStyle="red";ctx.textBaseline="middle";ctx.textAlign="left";
+  const textPoints=[];function getTextPoints(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillText(text,xOffset,yOffset);const imgData=ctx.getImageData(0,0,canvas.width,canvas.height);for(let y=0;y<canvas.height;y+=8){for(let x=0;x<canvas.width;x+=8){const index=(y*canvas.width+x)*4;if(imgData.data[index+3]>128){textPoints.push({x:x,y:y})}}}}getTextPoints();ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  offCtx.fillStyle = "white";
-  offCtx.font = `bold ${fontSize}px Arial`;
-  offCtx.textAlign = "center";
-  offCtx.textBaseline = "middle";
-
-  const letterPositions = [];
-
-  // Draw letters spaced out
-  const spacing = canvas.width / (letters.length + 1);
-  for(let i=0;i<letters.length;i++){
-    offCtx.clearRect(0,0,offCanvas.width, offCanvas.height);
-    offCtx.fillText(letters[i], spacing*(i+1), canvas.height/2);
-    const imageData = offCtx.getImageData(0,0,offCanvas.width, offCanvas.height);
-    for(let y=0;y<imageData.height;y+=6){
-      for(let x=0;x<imageData.width;x+=6){
-        const idx = (y*imageData.width + x)*4;
-        if(imageData.data[idx+3]>128){
-          letterPositions.push({x:x, y:y});
-        }
-      }
-    }
-  }
-
-  const particles = [];
-  for(let i=0;i<letterPositions.length;i++){
-    const lp = letterPositions[i];
-    particles.push({
-      x: Math.random()*canvas.width,
-      y: Math.random()*canvas.height,
-      tx: lp.x,
-      ty: lp.y,
-      vx: 0,
-      vy: 0,
-      size: 3 + Math.random()*2,
-      color: `hsl(${Math.random()*50+330},90%,65%)`
-    });
-  }
-
-  function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      const dx = p.tx - p.x;
-      const dy = p.ty - p.y;
-      p.vx += dx * 0.02;
-      p.vy += dy * 0.02;
-      p.vx *= 0.85;
-      p.vy *= 0.85;
-      p.x += p.vx;
-      p.y += p.vy;
-      ctx.fillStyle = p.color;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.size,0,2*Math.PI);
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-  animate();
+  const particles=[];for(let i=0;i<textPoints.length;i++){const p=textPoints[i];particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,tx:p.x,ty:p.y,r:Math.random()*3+1})}
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.x+= (p.tx-p.x)*0.07; p.y+=(p.ty-p.y)*0.07; ctx.beginPath();ctx.fillStyle="pink";ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();});requestAnimationFrame(draw);}
+  draw();
 }
 </script>
 </body>
