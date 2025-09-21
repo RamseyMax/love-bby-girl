@@ -5,65 +5,78 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>For Drafor Selorm ❤️</title>
 <style>
-:root{
-  --bg1:#0f2027;--bg2:#203a43;--accent:#ff5c8a;--gold:#ffd166;
-}
-*{box-sizing:border-box;font-family: "Segoe UI", Roboto, Arial, sans-serif}
-html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;overflow:hidden}
-.center{display:grid;place-items:center;height:100vh;padding:20px;}
-.card{
-  width:930px;max-width:100%;
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:16px;padding:28px;
-  box-shadow:0 10px 40px rgba(2,6,23,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
-  backdrop-filter: blur(6px);position:relative;overflow:hidden;
-}
-h1{margin:0 0 6px 0;font-size:22px;letter-spacing:0.6px}
-p.lead{margin:0 0 18px 0;opacity:0.95}
-form.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-label{display:block;font-size:12px;color:rgba(255,255,255,0.95);margin-bottom:6px}
-input[type="text"], input[type="password"], input[type="date"]{
-  width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
-  background:transparent;color:#fff;font-size:14px;outline:none;
-}
-.btn{
-  display:inline-block;padding:10px 16px;border-radius:10px;
-  background:linear-gradient(90deg,var(--accent),#ff7bbd);
-  color:#fff;text-decoration:none;border:none;cursor:pointer;font-weight:600;letter-spacing:0.3px;
-}
-.muted{font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px}
-.denied{
-  background:linear-gradient(90deg,#3b0f1f,#3b111f);
-  padding:16px;border-radius:10px;margin-top:12px;color:#ffdede;font-weight:600;
-}
-#mainContent{display:none;padding-top:18px}
-.grid100{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
-  max-height:320px;overflow:auto;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
-}
-.langCard{
-  background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:13px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.35);
-}
-.quotes{margin-top:18px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
-.quoteCard{
-  flex:1 1 45%;min-width:250px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:14px;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;
-}
-.bigTitle{
-  font-size:40px;margin:10px 0 6px 0;color:var(--gold);text-shadow:0 6px 40px rgba(0,0,0,0.55);
-  display:flex;align-items:center;gap:10px;
-}
-#confettiCanvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3}
-#heartCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:1;pointer-events:none}
-#petalCanvas{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:2;pointer-events:none}
-.card{position:relative;z-index:4}
-@media (max-width:860px){
-  .grid100{grid-template-columns:repeat(2,1fr)}
-  form.row{grid-template-columns:1fr}
-  .bigTitle{font-size:28px}
-}
+  :root{
+    --bg1: #0f2027;
+    --bg2: #203a43;
+    --accent: #ff5c8a;
+    --gold: #ffd166;
+    --glass: rgba(255,255,255,0.06);
+  }
+  *{box-sizing:border-box;font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif}
+  html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;overflow-x:hidden}
+  .center { display:grid;place-items:center;height:100vh;padding:20px; }
+
+  .card {
+    width:90%;
+    max-width:930px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:16px; padding:28px;
+    box-shadow:0 10px 40px rgba(2,6,23,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
+    backdrop-filter: blur(6px);
+    position:relative; overflow:hidden;
+  }
+
+  h1{margin:0 0 6px 0;font-size:22px;letter-spacing:0.6px}
+  p.lead{margin:0 0 18px 0;opacity:0.95}
+
+  form.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+  label{display:block;font-size:12px;color:rgba(255,255,255,0.95);margin-bottom:6px}
+  input[type="text"], input[type="password"], input[type="date"]{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
+    background:transparent; color:#fff; font-size:14px; outline:none;
+  }
+
+  .btn {
+    display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7bbd);
+    color:#fff;text-decoration:none;border:none;cursor:pointer;font-weight:600;letter-spacing:0.3px;
+  }
+
+  .muted{font-size:12px;color:rgba(255,255,255,0.75);margin-top:8px}
+  .denied{background:linear-gradient(90deg,#3b0f1f,#3b111f);padding:16px;border-radius:10px;margin-top:12px;color:#ffdede;font-weight:600;}
+
+  #mainContent{display:none;padding-top:18px}
+  .grid100{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;
+    max-height:320px;overflow:auto;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
+  }
+  .langCard{
+    background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    padding:12px;border-radius:8px;text-align:center;font-weight:600;font-size:13px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  .quotes{margin-top:18px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+  .quoteCard{
+    flex:1 1 45%;min-width:250px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:14px;border-radius:10px;border-left:4px solid var(--gold);font-size:14px;
+  }
+
+  .bigTitle{
+    font-size:40px;margin:10px 0 6px 0;color:var(--gold);text-shadow:0 6px 40px rgba(0,0,0,0.55);
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+
+  canvas{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;}
+  #confettiCanvas{z-index:3}
+  #heartCanvas{z-index:4}
+  #petalCanvas{z-index:2}
+  .card{position:relative;z-index:5}
+
+  @media(max-width:860px){
+    .grid100{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+    form.row{grid-template-columns:1fr}
+    .bigTitle{font-size:28px}
+  }
 </style>
 </head>
 <body>
@@ -119,7 +132,7 @@ input[type="text"], input[type="password"], input[type="date"]{
     <div id="denied" style="display:none;" class="denied">Access Denied — name does not match.</div>
 
     <div id="mainContent">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div>
           <div class="bigTitle">I LOVE YOU <span style="font-size:14px;color:#fff;opacity:0.9">— in 100 languages</span></div>
           <div style="font-size:14px;color:rgba(255,255,255,0.9)">A special page for DRAFOR SELORM. Scroll to see all languages and love quotes.</div>
@@ -143,75 +156,188 @@ input[type="text"], input[type="password"], input[type="date"]{
 </div>
 
 <script>
-const expectedName1="drafor selorm";
-const expectedName2="ramsey selorm coffie";
-const expectedBday="9th february 2001";
-const expectedPassword="24th november";
-function normalize(s){return(s||"").trim().replace(/\s+/g,' ').toLowerCase();}
+const expectedName1 = "drafor selorm";
+const expectedName2 = "ramsey selorm coffie";
+const expectedBday = "9th february 2001";
+const expectedPassword = "24th november";
+
+function normalize(s){ return (s||"").trim().replace(/\s+/g,' ').toLowerCase(); }
+
 function checkName(){
-  const name1=document.getElementById('name1').value||"";
-  const res=document.getElementById('nameResult');
-  if(normalize(name1)===expectedName1){
-    document.getElementById('step1').style.display='none';
-    document.getElementById('denied').style.display='none';
-    document.getElementById('step2').style.display='block';
-    res.textContent="Name verified. Please continue.";
-  }else{
-    document.getElementById('denied').style.display='block';
-    res.textContent="Name does not match. Access denied.";
+  const name1 = document.getElementById('name1').value || "";
+  const res = document.getElementById('nameResult');
+  if(normalize(name1) === expectedName1){
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('denied').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    res.textContent = "Name verified. Please continue.";
+  } else {
+    document.getElementById('denied').style.display = 'block';
+    res.textContent = "Name does not match. Access denied.";
   }
 }
+
 function checkAll(){
-  const bf=normalize(document.getElementById('bfName').value||"");
-  const bday=normalize((document.getElementById('bday').value||""));
-  const pwd=(document.getElementById('pwd').value||"");
-  const msg=document.getElementById('step2Msg');
-  const normalizeBday=bday.replace(/\s+/g,'').toLowerCase();
-  const expectedBdayNormalized=expectedBday.replace(/\s+/g,'').toLowerCase();
-  if(bf!==expectedName2){msg.textContent="Boyfriend name does not match.";return;}
-  if(normalizeBday!==expectedBdayNormalized){msg.textContent="Birthday does not match.";return;}
-  if(pwd!==expectedPassword){msg.textContent="Password incorrect.";return;}
-  msg.textContent="All verified. Unlocking the page...";
+  const bf = normalize(document.getElementById('bfName').value || "");
+  const bday = normalize((document.getElementById('bday').value || ""));
+  const pwd = (document.getElementById('pwd').value || "");
+  const msg = document.getElementById('step2Msg');
+
+  const normalizeBday = bday.replace(/\s+/g, ' ').replace(/ /g,'').toLowerCase();
+  const expectedBdayNormalized = expectedBday.replace(/\s+/g, ' ').replace(/ /g,'').toLowerCase();
+
+  if(bf !== expectedName2){ msg.textContent = "Boyfriend name does not match."; return; }
+  if(normalizeBday !== expectedBdayNormalized){ msg.textContent = "Birthday does not match."; return; }
+  if(pwd !== expectedPassword){ msg.textContent = "Password incorrect."; return; }
+
+  msg.textContent = "All verified. Unlocking the page...";
   unlockPage();
 }
 
 function unlockPage(){
-  document.getElementById('step2').style.display='none';
-  document.getElementById('mainContent').style.display='block';
-  const langs=getLoveLanguages();
-  const grid=document.getElementById('langsGrid');grid.innerHTML='';
-  langs.forEach(item=>{const el=document.createElement('div');el.className='langCard';el.textContent=item;grid.appendChild(el);});
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+
+  const langs = getLoveLanguages();
+  const grid = document.getElementById('langsGrid');
+  grid.innerHTML = '';
+  langs.forEach(item=>{
+    const el = document.createElement('div');
+    el.className = 'langCard';
+    el.textContent = item;
+    grid.appendChild(el);
+  });
+
   startPetals();
   startConfetti();
   startHeartParticlesSpellSELORM();
 }
 
-function getLoveLanguages(){return ["English — I love you","Spanish — Te quiero / Te amo","French — Je t'aime","German — Ich liebe dich","Italian — Ti amo","Portuguese — Eu te amo","Swahili — Nakupenda","Hausa — Ina son ku","Yoruba — Mo nifẹ rẹ","Igbo — A hụrụ m gị n'anya","Amharic — እከርሃለሁ (Ine kekirihalehu)","Arabic — أحبك (Aḥibbuk)","Mandarin Chinese — 我爱你 (Wǒ ài nǐ)","Cantonese — 我愛你 (Ngo oi nei)","Japanese — 愛してる (Aishiteru)","Korean — 사랑해 (Saranghae)","Russian — Я тебя люблю (Ya tebya lyublyu)","Turkish — Seni seviyorum","Dutch — Ik hou van jou","Polish — Kocham cię","Swedish — Jag älskar dig","Norwegian — Jeg elsker deg","Danish — Jeg elsker dig","Finnish — Rakastan sinua","Greek — Σ' αγαπώ (S' agapó)","Hebrew — אני אוהב אותך (Ani ohev otach)","Hindi — मैं तुम्हें प्यार करता हूँ (Main tumhen pyaar karta hoon)","Urdu — میں تم سے محبت کرتا ہوں (Main tum se mohabbat karta hoon)","Bengali — আমি তোমায় ভালোবাসি (Ami tomay bhalobashi)","Punjabi — ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ (Main tainu pyaar karda haan)","Gujarati — હું તને પ્રેમ કરું છું (Hu tane prem karu chu)","Marathi — मी तुझ्यावर प्रेम करतो (Mi tuzyavar prem karto)","Tamil — நான் உன்னை காதலிக்கிறேன் (Naan unnai kaadhalikkiren)","Telugu — నేను నిన్ను ప్రేమిస్తున్నా (Nenu ninnu premisthunna)","Kannada — 나는 너를 사랑해 (Naanu ninnannu preetisuttEne)","Malayalam — ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു (Njan ninne snehikkunnu)","Malay/Indonesian — Aku cinta kamu","Filipino (Tagalog) — Mahal kita","Vietnamese — Anh yêu em / Em yêu anh","Thai — ฉันรักคุณ (Chan rak khun)","Lao — ຂ້ອຍຮັກເຈົ້າ (Khoi hak chao)","Khmer — ខ្ញុំស្រលាញ់អ្នក (Knhom srolanh anak)","Burmese — မင်းကိုချစ်တယ် (Min ko chit tal)","Zulu — Ngiyakuthanda","Xhosa — Ndiyakuthanda","Sesotho — Kea u rata","Shona — Ndinokuda","Twi (Akan) — Me dɔ wo","Ewe — Me dɔ wo","Ga — Mi ni mi le","Bambara — N'ba ni","Wolof — Nopp naa la","Fula — Mi yidi maa","Kirundi — Ndagukunda","Kinyarwanda — Ndakwikunda","Maltese — Inħobbok","Irish — Taitním leat / Tá grá agam duit","Scottish Gaelic — Tha gaol agam ort","Welsh — 'Rwy'n dy garu di","Catalan — T'estimo","Basque — Maite zaitut","Galician — Quérote","Esperanto — Mi amas vin","Latin — Te amo","Samoan — Ou te alofa ia te oe","Tongan — 'Ofa atu","Maori — Aroha ahau ki a koe","Hawaiian — Aloha wau ia'oe","Fijian — Au domoni iko","Hmong — Kuv hlub koj","Kazakh — Мен сені сүйемін (Men seni süyemin)","Uzbek — Men seni sevaman","Azerbaijani — Mən səni sevirəm","Persian (Farsi) — دوستت دارم (Dooset daram)","Pashto — زه ستا سره مينه لرم (Za sta sara meena laram)","Kurdish — Ez hej te dikim","Armenian — Ես քեզ սիրում եմ (Yes k'ez sirum yem)","Georgian — მე შენ მიყვარხარ (Me shen miqvarxar)","Albanian — Të dua","Bosnian — Volim te","Serbian — Волим те (Volim te)","Croatian — Volim te","Slovak — Ľúbim ťa","Slovenian — Ljubim te","Romanian — Te iubesc","Hungarian — Szeretlek","Czech — Miluji tě","Bulgarian — Обичам те (Obicham te)","Macedonian — Te sakam","Montenegrin — Volim te","Malagasy — Tiako ianao","Indonesian — Aku cinta kamu"];}
-function downloadAsText(){const txt=langsGrid.innerText+"\n\nLove Quotes:\n"+Array.from(document.querySelectorAll(".quoteCard")).map(q=>q.innerText).join("\n");const blob=new Blob([txt],{type:"text/plain"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="love_quotes.txt";a.click();}
-
-function startPetals(){
-  const canvas=document.getElementById('petalCanvas');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-  const petals=[];for(let i=0;i<40;i++){petals.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vy:0.5+Math.random(),vx:Math.random()*1-0.5,r:5+Math.random()*5})}
-  function drawPetals(){ctx.clearRect(0,0,canvas.width,canvas.height);petals.forEach(p=>{p.y+=p.vy;p.x+=p.vx;if(p.y>canvas.height)p.y=-10;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;ctx.fillStyle="rgba(255,182,193,0.7)";ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(drawPetals);}
-  drawPetals();
+function getLoveLanguages(){
+  return [
+"English — I love you","Spanish — Te quiero / Te amo","French — Je t'aime","German — Ich liebe dich","Italian — Ti amo",
+"Portuguese — Eu te amo","Swahili — Nakupenda","Hausa — Ina son ku","Yoruba — Mo nifẹ rẹ","Igbo — A hụrụ m gị n'anya",
+"Amharic — እከርሃለሁ (Ine kekirihalehu)","Arabic — أحبك (Aḥibbuk)","Mandarin Chinese — 我爱你 (Wǒ ài nǐ)","Cantonese — 我愛你 (Ngo oi nei)","Japanese — 愛してる (Aishiteru)","Korean — 사랑해 (Saranghae)","Russian — Я тебя люблю (Ya tebya lyublyu)","Turkish — Seni seviyorum","Dutch — Ik hou van jou","Polish — Kocham cię","Swedish — Jag älskar dig","Norwegian — Jeg elsker deg","Danish — Jeg elsker dig","Finnish — Rakastan sinua","Greek — Σ' αγαπώ (S' agapó)","Hebrew — אני אוהב אותך (Ani ohev otach)","Hindi — मैं तुम्हें प्यार करता हूँ (Main tumhen pyaar karta hoon)","Urdu — میں تم سے محبت کرتا ہوں (Main tum se mohabbat karta hoon)","Bengali — আমি তোমায় ভালোবাসি (Ami tomay bhalobashi)","Punjabi — ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ (Main tainu pyaar karda haan)","Gujarati — હું તને પ્રેમ કરું છું (Hu tane prem karu chu)","Marathi — मी तुझ्यावर प्रेम करतो (Mi tuzyavar prem karto)","Tamil — நான் உன்னை காதலிக்கிறேன் (Naan unnai kaadhalikkiren)","Telugu — నేను నిన్ను ప్రేమిస్తున్నా (Nenu ninnu premisthunna)","Kannada — 나는 너를 사랑해 (Naanu ninnannu preetisuttEne)","Malayalam — ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു (Njan ninne snehikkunnu)","Malay/Indonesian — Aku cinta kamu","Filipino (Tagalog) — Mahal kita","Vietnamese — Anh yêu em / Em yêu anh","Thai — ฉันรักคุณ (Chan rak khun)","Lao — ຂ້ອຍຮັກເຈົ້າ (Khoi hak chao)","Khmer — ខ្ញុំស្រលាញ់អ្នក (Knhom srolanh anak)","Burmese — မင်းကိုချစ်တယ် (Min ko chit tal)","Zulu — Ngiyakuthanda","Xhosa — Ndiyakuthanda","Sesotho — Kea u rata","Shona — Ndinokuda","Twi (Akan) — Me dɔ wo","Ewe — Me dɔ wo","Ga — Mi ni mi le","Bambara — N'ba ni","Wolof — Nopp naa la","Fula — Mi yidi maa","Kirundi — Ndagukunda","Kinyarwanda — Ndakwikunda","Maltese — Inħobbok","Irish — Taitním leat / Tá grá agam duit","Scottish Gaelic — Tha gaol agam ort","Welsh — 'Rwy'n dy garu di","Catalan — T'estimo","Basque — Maite zaitut","Galician — Quérote","Esperanto — Mi amas vin","Latin — Te amo","Samoan — Ou te alofa ia te oe","Tongan — 'Ofa atu","Maori — Aroha ahau ki a koe","Hawaiian — Aloha wau ia'oe","Fijian — Au domoni iko","Hmong — Kuv hlub koj","Kazakh — Мен сені сүйемін (Men seni süyemin)","Uzbek — Men seni sevaman","Azerbaijani — Mən səni sevirəm","Persian (Farsi) — دوستت دارم (Dooset daram)","Pashto — زه ستا سره مينه لرم (Za sta sara meena laram)","Kurdish — Ez hej te dikim","Armenian — Ես քեզ սիրում եմ (Yes k'ez sirum yem)","Georgian — მე შენ მიყვარხარ (Me shen miqvarxar)","Albanian — Të dua","Bosnian — Volim te","Serbian — Волим те (Volim te)","Croatian — Volim te","Slovak — Ľúbim ťa","Slovenian — Ljubim te","Romanian — Te iubesc","Hungarian — Szeretlek","Czech — Miluji tě","Bulgarian — Обичам те (Obicham te)","Malayalam (alt) — ഞാന് നിന്നെ സ്‌നേഹം ചെയ്യുന്നു"];
 }
 
 function startConfetti(){
-  const canvas=document.getElementById('confettiCanvas');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-  const confetti=[];for(let i=0;i<100;i++){confetti.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vy:1+Math.random()*2,r:3+Math.random()*3,color:`hsl(${Math.random()*360},80%,60%)`})}
-  function drawConfetti(){ctx.clearRect(0,0,canvas.width,canvas.height);confetti.forEach(c=>{c.y+=c.vy;if(c.y>canvas.height)c.y=0;c.x+=Math.sin(c.y/10)*2;ctx.fillStyle=c.color;ctx.beginPath();ctx.arc(c.x,c.y,c.r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(drawConfetti);}
-  drawConfetti();
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const pieces = [];
+  const colors = ["#ff5c8a","#ffd166","#ff7bbd","#7ef0c7","#ffd1ff","#ff8a5c"];
+  for(let i=0;i<140;i++){
+    pieces.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*-canvas.height,
+      r: Math.random()*6+4,
+      d: Math.random()*30+10,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      tilt: Math.random()*10-5,
+      tiltAngle: Math.random()*6
+    });
+  }
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    t+=0.02;
+    pieces.forEach(p=>{
+      p.tiltAngle+=0.02;
+      p.y += Math.sin(t+p.d)*0.8+2;
+      p.x += Math.cos(t+p.d/2)*0.6;
+      ctx.save();
+      ctx.fillStyle=p.color;
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.tiltAngle);
+      ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*1.6);
+      ctx.restore();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+  setTimeout(()=>{ ctx.clearRect(0,0,canvas.width,canvas.height); }, 6000);
+}
+
+function startPetals(){
+  const canvas = document.getElementById('petalCanvas');
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight;}
+  resize(); window.addEventListener('resize', resize);
+  const petals = [];
+  for(let i=0;i<60;i++){
+    petals.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*0.5,vy:0.5+Math.random(),r:Math.random()*5+2,angle:Math.random()*2*Math.PI});
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    petals.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy; p.angle+=0.03;
+      if(p.y>canvas.height){p.y=-10; p.x=Math.random()*canvas.width;}
+      ctx.save();
+      ctx.fillStyle="#ff5c8a";
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.angle);
+      ctx.beginPath();
+      ctx.ellipse(0,0,p.r,p.r*0.6,0,0,2*Math.PI);
+      ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
 }
 
 function startHeartParticlesSpellSELORM(){
-  const canvas=document.getElementById('heartCanvas');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-  const text="SELORM";const fontSize=120;const xOffset=canvas.width/2-180;const yOffset=canvas.height/2;
-  ctx.font=`bold ${fontSize}px Arial`;ctx.textBaseline="middle";ctx.textAlign="left";
-  const textPoints=[];ctx.fillText(text,xOffset,yOffset);const imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
-  for(let y=0;y<canvas.height;y+=6){for(let x=0;x<canvas.width;x+=6){const index=(y*canvas.width+x)*4;if(imgData.data[index+3]>128){textPoints.push({x:x,y:y})}}}
-  const particles=[];for(let i=0;i<textPoints.length;i++){const p=textPoints[i];particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,tx:p.x,ty:p.y,r:Math.random()*4+2,color:`hsl(${320+Math.random()*40},100%,70%)`})}
-  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.x += (p.tx - p.x)*0.08;p.y += (p.ty - p.y)*0.08;ctx.beginPath();ctx.shadowColor = "rgba(255,200,200,0.8)";ctx.shadowBlur = 12;ctx.fillStyle = p.color;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw);}
-  draw();
+  const canvas = document.getElementById('heartCanvas');
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+
+  const letters = "SELORM";
+  const particles = [];
+
+  function createParticles(){
+    const w = canvas.width;
+    const h = canvas.height;
+    const fontSize = Math.min(w/10, 80);
+    ctx.font = `${fontSize}px Comic Sans MS, Arial`;
+    const textWidth = ctx.measureText(letters).width;
+    const startX = (w - textWidth)/2;
+    const startY = h/2;
+
+    particles.length=0;
+    for(let i=0;i<letters.length;i++){
+      const letter = letters[i];
+      ctx.font = `${fontSize}px Comic Sans MS, Arial`;
+      ctx.fillStyle = "#ff5c8a";
+      ctx.fillText(letter, startX, startY);
+      const imageData = ctx.getImageData(0,0,w,h);
+      for(let y=0;y<h;y+=8){
+        for(let x=0;x<w;x+=8){
+          const index = (y*w+x)*4;
+          if(imageData.data[index+3]>128){
+            particles.push({x:x,y:y,dx:(Math.random()-0.5)*1.2,dy:(Math.random()-0.5)*1.2,r:1+Math.random()*2});
+          }
+        }
+      }
+      ctx.clearRect(0,0,w,h);
+    }
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.x += p.dx; p.y += p.dy;
+      ctx.fillStyle = "#ff5c8a";
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  createParticles();
+  animate();
 }
 </script>
 </body>
